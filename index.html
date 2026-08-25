@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enciclopédia Genealógica: Silva e Ribeiro</title>
+  <title>Origens Fofas: Silva & Ribeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-dark: #0f172a;
-      --primary-navy: #1e293b;
-      --accent-gold: #d97706;
-      --accent-light-gold: #fef3c7;
-      --text-main: #334155;
-      --text-muted: #64748b;
-      --bg-main: #f8fafc;
+      --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 100%);
       --card-bg: #ffffff;
-      --border-color: #e2e8f0;
+      --primary-pink: #d87093;
+      --soft-pink: #fbcfe8;
+      --pastel-lavender: #d8b4fe;
+      --rose-gold: #b76e79;
+      --text-main: #5c4b51;
+      --text-soft: #8c7b83;
+      --shadow-color: rgba(216, 112, 147, 0.08);
     }
 
     * {
@@ -24,216 +27,219 @@
     }
 
     body {
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: 'Quicksand', sans-serif;
       line-height: 1.8;
-      background-color: var(--bg-main);
+      background: var(--bg-gradient);
       color: var(--text-main);
-      padding-bottom: 3rem;
+      min-height: 100vh;
+      padding-bottom: 4rem;
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary-navy));
-      color: #ffffff;
-      padding: 4rem 1.5rem 3rem 1.5rem;
       text-align: center;
-      border-bottom: 5px solid var(--accent-gold);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding: 4rem 1.5rem 2.5rem 1.5rem;
+      position: relative;
+    }
+
+    header::after {
+      content: "🌸";
+      font-size: 1.8rem;
+      display: block;
+      margin-top: 0.8rem;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-family: 'Comfortaa', cursive;
+      font-size: 2.5rem;
+      color: var(--primary-pink);
       font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 1rem;
-      color: #f8fafc;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 1.2rem;
-      max-width: 750px;
+      font-size: 1.15rem;
+      color: var(--text-soft);
+      max-width: 600px;
       margin: 0 auto;
-      color: #cbd5e1;
     }
 
     .container {
-      max-width: 1100px;
-      margin: 3rem auto 0 auto;
+      max-width: 1000px;
+      margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    .intro-box {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-left: 6px solid var(--accent-gold);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    .intro-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border: 2px solid #fce7f3;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 25px var(--shadow-color);
+      text-align: center;
     }
 
-    .intro-box h2 {
-      font-size: 1.5rem;
-      color: var(--primary-dark);
+    .intro-card h2 {
+      font-family: 'Comfortaa', cursive;
+      color: var(--rose-gold);
+      font-size: 1.4rem;
       margin-bottom: 0.8rem;
     }
 
-    .intro-box p {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-main);
-      font-size: 1.05rem;
-    }
-
-    .content-grid {
+    .cards-wrapper {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
 
-    .surname-card {
+    .card {
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 3rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 12px 30px var(--shadow-color);
+      border: 2px solid #fdf2f8;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .surname-header {
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(216, 112, 147, 0.15);
     }
 
-    .surname-title {
-      font-size: 2.2rem;
-      color: var(--primary-dark);
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #fbcfe8, #d8b4fe);
     }
 
     .badge {
-      background-color: var(--accent-light-gold);
-      color: var(--accent-gold);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
+      display: inline-block;
+      background: #fdf2f8;
+      color: var(--primary-pink);
+      font-weight: 600;
       font-size: 0.85rem;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      border: 1px solid #fcd34d;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-block {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-block h3 {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 1.3rem;
-      color: var(--primary-navy);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
       margin-bottom: 1rem;
+      border: 1px solid #fbcfe8;
+    }
+
+    .card h2 {
+      font-family: 'Comfortaa', cursive;
+      font-size: 1.8rem;
+      color: var(--rose-gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--primary-pink);
+      margin: 1.5rem 0 0.5rem 0;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .section-block p {
-      margin-bottom: 1rem;
-      text-align: justify;
-      font-size: 1.05rem;
-    }
-
-    .detail-list {
-      list-style-type: none;
-      margin-top: 1rem;
-    }
-
-    .detail-list li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1.2rem;
+    .card p {
       font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
     }
 
-    .detail-list li::before {
-      content: "■";
+    ul {
+      list-style: none;
+      margin: 0.8rem 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.98rem;
+    }
+
+    li::before {
+      content: "✨";
       position: absolute;
       left: 0;
-      color: var(--accent-gold);
-      font-size: 1rem;
-      top: 0;
+      top: -2px;
+      font-size: 0.85rem;
     }
 
-    .detail-list strong {
-      color: var(--primary-dark);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .info-callout {
-      background-color: #f1f5f9;
-      border-radius: 8px;
-      padding: 1.5rem;
+    .highlight-box {
+      background: #faf5ff;
+      border: 1.5px dashed var(--pastel-lavender);
+      border-radius: 16px;
+      padding: 1.2rem;
       margin-top: 1.5rem;
-      border-left: 4px solid var(--primary-navy);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      color: #6b21a8;
     }
 
-    .comparison-section {
-      margin-top: 4rem;
+    .comparison-wrapper {
+      margin-top: 3rem;
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 12px 30px var(--shadow-color);
+      border: 2px solid #fdf2f8;
     }
 
-    .comparison-section h2 {
-      font-size: 1.8rem;
-      color: var(--primary-dark);
-      margin-bottom: 1.5rem;
+    .comparison-wrapper h2 {
+      font-family: 'Comfortaa', cursive;
       text-align: center;
+      color: var(--rose-gold);
+      margin-bottom: 1.8rem;
+      font-size: 1.6rem;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin-top: 1rem;
+      overflow: hidden;
+      border-radius: 16px;
     }
 
     th, td {
       padding: 1rem;
       text-align: left;
-      border-bottom: 1px solid var(--border-color);
     }
 
     th {
-      background-color: var(--primary-navy);
-      color: #ffffff;
-      font-weight: 600;
+      background-color: #fce7f3;
+      color: var(--primary-pink);
+      font-weight: 700;
+      font-family: 'Comfortaa', cursive;
     }
 
-    tr:nth-child(even) {
-      background-color: #f8fafc;
+    td {
+      background-color: #fffafc;
+      border-bottom: 1px solid #fce7f3;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     footer {
       text-align: center;
       margin-top: 4rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-muted);
+      color: var(--text-soft);
       font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
-      .surname-card { padding: 1.5rem; }
-      .surname-title { font-size: 1.8rem; }
+      .cards-wrapper { grid-template-columns: 1fr; }
+      .card { padding: 1.8rem; }
       table { display: block; overflow-x: auto; }
     }
   </style>
@@ -241,108 +247,82 @@
 <body>
 
   <header>
-    <h1>Estudo Genealógico e Histórico</h1>
-    <p>Uma análise aprofundada sobre a origem, evolução e expansão dos sobrenomes Silva e Ribeiro na Península Ibérica e no Brasil</p>
+    <h1>A História das Nossas Famílias</h1>
+    <p>Um olhar delicado sobre a origem encantadora dos sobrenomes Silva e Ribeiro</p>
   </header>
 
   <main class="container">
 
-    <div class="intro-box">
-      <h2>Sobre os Sobrenomes Toponímicos</h2>
-      <p>Tanto <strong>Silva</strong> quanto <strong>Ribeiro</strong> pertencem à categoria dos sobrenomes toponímicos. Na Idade Média, antes da consolidação dos registros civis modernos, a população era frequentemente identificada pelo local de sua residência, origem geográfica ou características da paisagem natural ao redor de suas propriedades. Ambas as linhagens possuem raízes profundas na Península Ibérica (Portugal e Espanha) e atravessaram o Oceano Atlântico durante o processo de colonização das Américas.</p>
+    <div class="intro-box intro-card">
+      <h2>🍃 Conexão com a Natureza</h2>
+      <p>Você sabia que ambos os sobrenomes nasceram do carinho das pessoas pela natureza? Na Idade Média, as famílias eram presenteadas com nomes que lembravam os lugares bonitos onde moravam, como florestas verdinhas e riachos tranquilos.</p>
     </div>
 
-    <div class="content-grid">
+    <div class="cards-wrapper">
 
-      <!-- SOBRENOME SILVA -->
-      <article class="surname-card">
-        <div class="surname-header">
-          <h2 class="surname-title">A Linhagem Silva</h2>
-          <span class="badge">Origem: Latim (Silva)</span>
-        </div>
+      <!-- CARD SILVA -->
+      <article class="card">
+        <span class="badge">Origem: Latim</span>
+        <h2>Silva 🌿</h2>
 
-        <div class="section-block">
-          <h3>Etimologia e Origens Medievais</h3>
-          <p>O vocábulo deriva diretamente do latim <em>silva</em>, cujo significado literal traduz-se como "floresta", "mata", "selva" ou "bosque". Historiadores e genealogistas apontam que a linhagem nobre portuguesa remonta à Idade Média, associada à nobreza da <strong>Torre de Silva</strong>, situada na freguesia de São Julião de Silva, próxima a Valença, no norte de Portugal.</p>
-          <p>Dom Guterre Alderete da Silva é frequentemente citado como um dos primeiros a consolidar o uso da honra e do nome no século XI, servindo à monarquia leonesa e portuguesa em disputas territoriais.</p>
-        </div>
+        <h3>O Significado</h3>
+        <p>Vem da palavra em latim <em>silva</em>, que quer dizer <strong>"floresta"</strong>, <strong>"mata verde"</strong> ou <strong>"bosque"</strong>. Era o nome dado com afeto a quem vivia pertinho da natureza bucólica em Portugal.</p>
 
-        <div class="section-block">
-          <h3>Difusão e Povoamento no Brasil</h3>
-          <p>A presença do sobrenome Silva no território brasileiro não se deu por um único tronco familiar, mas por múltiplos fatores demográficos e sociais a partir do século XVI:</p>
-          <ul class="detail-list">
-            <li><strong>Imigração Portuguesa Massiva:</strong> Milhares de colonos, desde fidalgos até agricultores e artesãos vindos do Minho e de Trás-os-Montes, estabeleceram-se no Brasil trazendo o sobrenome.</li>
-            <li><strong>Mecanismos de Batismo Colonial:</strong> Durante a catequização de povos indígenas e o batismo de africanos escravizados, os religiosos católicos frequentemente atribuíam o sobrenome "Silva" por ser o mais comum, neutro e representativo da Coroa Portuguesa.</li>
-            <li><strong>Cristãos-Novos:</strong> Judeus convertidos forçadamente ao cristianismo (cristãos-novos) adotavam frequentemente sobrenomes ligados à natureza, árvores e plantas para ocultar suas origens ou marcar uma nova vida no Novo Mundo.</li>
-          </ul>
-        </div>
+        <h3>Sua Trajetória</h3>
+        <p>Com o tempo, o nome atravessou o oceano e se espalhou pelo Brasil com muito amor:</p>
+        <ul>
+          <li><strong>Múltiplos Recomeços:</strong> Adotado por famílias portuguesas, povos indígenas e pessoas que buscavam um novo início cheio de esperança.</li>
+          <li><strong>Aconchego e União:</strong> Tornou-se o sobrenome mais querido e presente em nosso país, abraçando milhões de histórias.</li>
+        </ul>
 
-        <div class="info-callout">
-          <strong>Impacto Demográfico:</strong> O sobrenome Silva tornou-se o mais popular do Brasil e de todo o mundo lusófono, representando dezenas de milhões de cidadãos de diferentes matrizes étnicas e culturais.
+        <div class="highlight-box">
+          🌷 <strong>Curiosidade Doce:</strong> Por remeter às árvores e à vida, era um dos nomes favoritos escolhidos para simbolizar o florescer de uma nova jornada familiar.
         </div>
       </article>
 
-      <!-- SOBRENOME RIBEIRO -->
-      <article class="surname-card">
-        <div class="surname-header">
-          <h2 class="surname-title">A Linhagem Ribeiro</h2>
-          <span class="badge">Origem: Latim (Riparia)</span>
-        </div>
+      <!-- CARD RIBEIRO -->
+      <article class="card">
+        <span class="badge">Origem: Latim</span>
+        <h2>Ribeiro 🌊</h2>
 
-        <div class="section-block">
-          <h3>Etimologia e Origens Medievais</h3>
-          <p>O termo provém do latim vulgar <em>riparia</em>, derivado de <em>ripa</em> (margem de rio), que evoluiu para o português como "ribeiro" — referindo-se a um pequeno curso d'água, riacho ou córrego. Na Espanha, a mesma raiz etimológica deu origem às variantes <em>Rivero</em>, <em>Ribero</em> e <em>Rivera</em>.</p>
-          <p>Inicialmente, o nome identificava os habitantes de propriedades localizadas ao longo de rios ou vales férteis na região do Norte de Portugal e da Galiza, áreas marcadas por abundante hidrografia.</p>
-        </div>
+        <h3>O Significado</h3>
+        <p>Deriva de <em>riparia</em>, que significa <strong>"pequeno curso d'água"</strong>, <strong>"riacho"</strong> ou <strong>"córrego transparente"</strong>. Identificava as famílias que moravam perto da mansidão dos rios.</p>
 
-        <div class="section-block">
-          <h3>Atuação na Expansão Territorial Brasileira</h3>
-          <p>Ao contrário dos assentamentos eminentemente litorâneos do início da colonização, a família Ribeiro desempenhou papel marcante na interiorização e expansão das fronteiras da América Portuguesa:</p>
-          <ul class="detail-list">
-            <li><strong>Entradas e Bandeiras:</strong> Diversos exploradores portadores do sobrenome participaram ativamente das expedições que saíam da Capitania de São Vicente rumo ao interior em busca de minérios preciosos.</li>
-            <li><strong>Rotas do Tropeirismo e Pecuária:</strong> Nos séculos XVIII e XIX, famílias Ribeiro estabeleceram fazendas ao longo dos caminhos de tropas de gado, influenciando o povoamento dos Estados de Minas Gerais, São Paulo, Paraná, Santa Catarina e Rio Grande do Sul.</li>
-            <li><strong>Fixação na Economia do Ouro e Café:</strong> O sobrenome fixou-se com força nas regiões mineradoras e, posteriormente, nas grandes plantações de café do Vale do Paraíba e Oeste Paulista.</li>
-          </ul>
-        </div>
+        <h3>Sua Trajetória</h3>
+        <p>Esse nome suave acompanhou viagens inesquecíveis pelo interior das nossas terras:</p>
+        <ul>
+          <li><strong>Caminhos e Horizontes:</strong> Esteve presente com os viajantes e pequenos produtores que desbravaram belos vales e montanhas.</li>
+          <li><strong>Presença Marcante:</strong> Trouxe vida para vilas e cidadezinhas que nasceram à beira de rios e riachos por todo o Brasil.</li>
+        </ul>
 
-        <div class="info-callout">
-          <strong>Elemento Geográfico:</strong> A própria geografia brasileira acabou batizada por esse nome, como na Bacia do Rio Ribeira de Iguape, entre São Paulo e Paraná, rota histórica de povoamento e exploração de minérios.
+        <div class="highlight-box">
+          🎀 <strong>Curiosidade Doce:</strong> Na Espanha, esse mesmo nome ganhou formas igualmente charmosas, como <em>Rivera</em> e <em>Rivero</em>.
         </div>
       </article>
 
     </div>
 
     <!-- TABELA COMPARATIVA -->
-    <section class="comparison-section">
-      <h2>Quadro Comparativo Sistemático</h2>
+    <section class="comparison-wrapper">
+      <h2>Resumo Delicado ✨</h2>
       <table>
         <thead>
           <tr>
-            <th>Atributo</th>
-            <th>Linhagem Silva</th>
-            <th>Linhagem Ribeiro</th>
+            <th>Sobrenome</th>
+            <th>Inspiração Natural</th>
+            <th>Sensação e Significado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Raiz Etimológica</strong></td>
-            <td><em>Silva</em> (Latim) — "Mata", "Floresta"</td>
-            <td><em>Riparia</em> (Latim) — "Riacho", "Curso d'água"</td>
+            <td><strong>Silva</strong></td>
+            <td>Mata & Bosque</td>
+            <td>Aconchego, vida, frescor das árvores</td>
           </tr>
           <tr>
-            <td><strong>Variantes Ibéricas</strong></td>
-            <td>Silva (Portugal e Espanha), Da Silva</td>
-            <td>Ribeiro (Portugal), Rivero / Rivera (Espanha)</td>
-          </tr>
-          <tr>
-            <td><strong>Elemento Geográfico</strong></td>
-            <td>Regiões arborizadas e matas densas</td>
-            <td>Margens de rios, córregos e vales úmidos</td>
-          </tr>
-          <tr>
-            <td><strong>Papel na História Colonial</strong></td>
-            <td>Base demográfica ampla, povoamento de vilas e integração social</td>
-            <td>Expansão para o interior, pecuária, rotas de tropas e mineração</td>
+            <td><strong>Ribeiro</strong></td>
+            <td>Riacho & Córrego</td>
+            <td>Fluidez, paz, serenidade das águas</td>
           </tr>
         </tbody>
       </table>
@@ -351,7 +331,7 @@
   </main>
 
   <footer>
-    <p>&copy; Arquivo de Documentação Genealógica e Histórica</p>
+    <p>Feito com 💖 para preservar nossas memórias e raízes</p>
   </footer>
 
 </body>
