@@ -65,7 +65,6 @@
         .surname-section {
             background: var(--card-bg);
             border-radius: 30px;
-            padding: 40px;
             margin-bottom: 50px;
             box-shadow: 0 15px 40px rgba(180, 170, 185, 0.08);
             border: 1px solid #f7f0f2;
@@ -79,6 +78,18 @@
 
         .surname-section.ribeiro {
             border-top: 6px solid var(--primary-ribeiro);
+        }
+
+        /* Banner de Imagem Temática */
+        .surname-banner {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            filter: brightness(0.95) saturate(0.85);
+        }
+
+        .surname-content-padding {
+            padding: 40px;
         }
 
         .surname-header {
@@ -216,148 +227,158 @@
 
     <!-- ================= SOBRENOME SILVA ================= -->
     <div class="surname-section silva">
-        <div class="surname-header">
-            <h2 class="surname-title">🌸 Família Silva</h2>
-            <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Campo de prata, com um leão rampante de púrpura.</div>
-        </div>
-        <div class="meaning">
-            <strong>Significado:</strong> Derivado do latim <em>silva</em> ("selva", "floresta", "bosque" ou "mato espesso"). É um apelido toponímico dado originalmente a pessoas que habitavam perto de zonas arborizadas ou florestadas na Península Ibérica.
-        </div>
+        <!-- Imagem temática de floresta/bosque (significado de Silva) -->
+        <img src="https://images.unsplash.com/photo-1511497584788-876761192991?auto=format&fit=crop&w=1200&q=80" alt="Floresta Silva" class="surname-banner">
+        
+        <div class="surname-content-padding">
+            <div class="surname-header">
+                <h2 class="surname-title">🌸 Família Silva</h2>
+                <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Campo de prata, com um leão rampante de púrpura.</div>
+            </div>
+            <div class="meaning">
+                <strong>Significado:</strong> Derivado do latim <em>silva</em> ("selva", "floresta", "bosque" ou "mato espesso"). É um apelido toponímico dado originalmente a pessoas que habitavam perto de zonas arborizadas ou florestadas na Península Ibérica.
+            </div>
 
-        <div class="timeline">
-            <!-- Quadrinho 1 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século I a.C.</div>
-                <div class="timeline-title">Raízes Latinas e Ocupação Romana</div>
-                <p class="timeline-desc">A palavra "Silva" consolida-se no latim vulgar hispânico para designar matas e florestas densas, servindo de base futura para identificações locais.</p>
-            </div>
-            <!-- Quadrinho 2 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século IV</div>
-                <div class="timeline-title">Era Visigótica na Gallaecia</div>
-                <p class="timeline-desc">Povos germânicos e populações locais integram referências à natureza para distinguir clãs familiares nas regiões arborizadas do norte peninsular.</p>
-            </div>
-            <!-- Quadrinho 3 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XI</div>
-                <div class="timeline-title">Primeiros Registros Escritos em Portugal</div>
-                <p class="timeline-desc">O termo surge em doações e testamentos medievais no norte de Portugal, associado a nobres proprietários de terras em zonas florestais.</p>
-            </div>
-            <!-- Quadrinho 4 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XII (1147)</div>
-                <div class="timeline-title">Participação na Tomada de Lisboa</div>
-                <p class="timeline-desc">Cavaleiros da linhagem Silva destacam-se nas campanhas militares ao lado de D. Afonso Henriques, expandindo domínios territoriais.</p>
-            </div>
-            <!-- Quadrinho 5 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XIII (1250)</div>
-                <div class="timeline-title">Conquista do Algarve e Sesmarias</div>
-                <p class="timeline-desc">Membros da família recebem terras recém-conquistadas no sul de Portugal, consolidando o sobrenome entre a fidalguia do reino.</p>
-            </div>
-            <!-- Quadrinho 6 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XIV (1385)</div>
-                <div class="timeline-title">Apoio na Batalha de Aljubarrota</div>
-                <p class="timeline-desc">A fidalguia dos Silva apoia D. João I (Mestre de Avis), garantindo influência política, novos privilégios e importantes cargos na corte.</p>
-            </div>
-            <!-- Quadrinho 7 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XV (1415)</div>
-                <div class="timeline-title">Expansão Marítima e Ceuta</div>
-                <p class="timeline-desc">Navegadores e capitães com o sobrenome Silva integram as primeiras armadas portuguesas rumo à costa da África e Atlântico.</p>
-            </div>
-            <!-- Quadrinho 8 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XVI (1500+)</div>
-                <div class="timeline-title">Desembarque nas Terras do Brasil</div>
-                <p class="timeline-desc">Com o início da colonização, administradores, colonos e bandeirantes chamados Silva fixam-se nos litorais brasileiros.</p>
-            </div>
-            <!-- Quadrinho 9 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XVIII (1720)</div>
-                <div class="timeline-title">Ciclo do Ouro em Minas Gerais</div>
-                <p class="timeline-desc">O sobrenome multiplica-se massivamente nas vilas mineradoras, tornando-se o nome de família mais popular do Brasil.</p>
-            </div>
-            <!-- Quadrinho 10 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XX e XXI</div>
-                <div class="timeline-title">Consolidação e Projeção Global</div>
-                <p class="timeline-desc">Silva consolida-se como um dos sobrenomes mais expressivos da lusofonia, marcando forte presença em todas as áreas da sociedade.</p>
+            <div class="timeline">
+                <!-- Quadrinho 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século I a.C.</div>
+                    <div class="timeline-title">Raízes Latinas e Ocupação Romana</div>
+                    <p class="timeline-desc">A palavra "Silva" consolida-se no latim vulgar hispânico para designar matas e florestas densas, servindo de base futura para identificações locais.</p>
+                </div>
+                <!-- Quadrinho 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século IV</div>
+                    <div class="timeline-title">Era Visigótica na Gallaecia</div>
+                    <p class="timeline-desc">Povos germânicos e populações locais integram referências à natureza para distinguir clãs familiares nas regiões arborizadas do norte peninsular.</p>
+                </div>
+                <!-- Quadrinho 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XI</div>
+                    <div class="timeline-title">Primeiros Registros Escritos em Portugal</div>
+                    <p class="timeline-desc">O termo surge em doações e testamentos medievais no norte de Portugal, associado a nobres proprietários de terras em zonas florestais.</p>
+                </div>
+                <!-- Quadrinho 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XII (1147)</div>
+                    <div class="timeline-title">Participação na Tomada de Lisboa</div>
+                    <p class="timeline-desc">Cavaleiros da linhagem Silva destacam-se nas campanhas militares ao lado de D. Afonso Henriques, expandindo domínios territoriais.</p>
+                </div>
+                <!-- Quadrinho 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XIII (1250)</div>
+                    <div class="timeline-title">Conquista do Algarve e Sesmarias</div>
+                    <p class="timeline-desc">Membros da família recebem terras recém-conquistadas no sul de Portugal, consolidando o sobrenome entre a fidalguia do reino.</p>
+                </div>
+                <!-- Quadrinho 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XIV (1385)</div>
+                    <div class="timeline-title">Apoio na Batalha de Aljubarrota</div>
+                    <p class="timeline-desc">A fidalguia dos Silva apoia D. João I (Mestre de Avis), garantindo influência política, novos privilégios e importantes cargos na corte.</p>
+                </div>
+                <!-- Quadrinho 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XV (1415)</div>
+                    <div class="timeline-title">Expansão Marítima e Ceuta</div>
+                    <p class="timeline-desc">Navegadores e capitães com o sobrenome Silva integram as primeiras armadas portuguesas rumo à costa da África e Atlântico.</p>
+                </div>
+                <!-- Quadrinho 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XVI (1500+)</div>
+                    <div class="timeline-title">Desembarque nas Terras do Brasil</div>
+                    <p class="timeline-desc">Com o início da colonização, administradores, colonos e bandeirantes chamados Silva fixam-se nos litorais brasileiros.</p>
+                </div>
+                <!-- Quadrinho 9 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XVIII (1720)</div>
+                    <div class="timeline-title">Ciclo do Ouro em Minas Gerais</div>
+                    <p class="timeline-desc">O sobrenome multiplica-se massivamente nas vilas mineradoras, tornando-se o nome de família mais popular do Brasil.</p>
+                </div>
+                <!-- Quadrinho 10 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XX e XXI</div>
+                    <div class="timeline-title">Consolidação e Projeção Global</div>
+                    <p class="timeline-desc">Silva consolida-se como um dos sobrenomes mais expressivos da lusofonia, marcando forte presença em todas as áreas da sociedade.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- ================= SOBRENOME RIBEIRO ================= -->
     <div class="surname-section ribeiro">
-        <div class="surname-header">
-            <h2 class="surname-title">🌷 Família Ribeiro</h2>
-            <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Escudo xadrez de prata e azul, com bordadura de goles.</div>
-        </div>
-        <div class="meaning">
-            <strong>Significado:</strong> Derivado de <em>ribeiro</em> (diminutivo de rio), que significa "pequeno rio", "regato" ou "riacho". Apelido toponímico herdado por famílias que viviam nas margens de pequenos cursos d'água na Península Ibérica.
-        </div>
+        <!-- Imagem temática de riacho/água corrente (significado de Ribeiro) -->
+        <img src="https://images.unsplash.com/photo-1437651848039-44f210a04944?auto=format&fit=crop&w=1200&q=80" alt="Riacho Ribeiro" class="surname-banner">
+        
+        <div class="surname-content-padding">
+            <div class="surname-header">
+                <h2 class="surname-title">🌷 Família Ribeiro</h2>
+                <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Escudo xadrez de prata e azul, com bordadura de goles.</div>
+            </div>
+            <div class="meaning">
+                <strong>Significado:</strong> Derivado de <em>ribeiro</em> (diminutivo de rio), que significa "pequeno rio", "regato" ou "riacho". Apelido toponímico herdado por famílias que viviam nas margens de pequenos cursos d'água na Península Ibérica.
+            </div>
 
-        <div class="timeline">
-            <!-- Quadrinho 1 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século IX</div>
-                <div class="timeline-title">Toponímia nas Montanhas do Minho e Galiza</div>
-                <p class="timeline-desc">Comunidades rurais utilizam acidentes geográficos fluviais, como pequenos regatos, para identificar moradias e clãs locais.</p>
-            </div>
-            <!-- Quadrinho 2 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XI (1050)</div>
-                <div class="timeline-title">Primeiros Registros Documentais</div>
-                <p class="timeline-desc">O termo começa a constar formalmente como apelido de família em escrituras eclesiásticas no norte ibérico.</p>
-            </div>
-            <!-- Quadrinho 3 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XII (1128)</div>
-                <div class="timeline-title">Autonomia do Condado Portucalense</div>
-                <p class="timeline-desc">Membros da linhagem Ribeiro combatem na Batalha de São Mamede, integrando redes de poder e vassalagem ao novo reino.</p>
-            </div>
-            <!-- Quadrinho 4 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XIII (1270)</div>
-                <div class="timeline-title">Fundação de Solares na Região Norte</div>
-                <p class="timeline-desc">Estabelecimento oficial do solar principal da família na região de Entre Douro e Minho, ramificando-se por Portugal.</p>
-            </div>
-            <!-- Quadrinho 5 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XIV (1360)</div>
-                <div class="timeline-title">Presença na Poesia Trovadoresca</div>
-                <p class="timeline-desc">Trovadores e clérigos da família Ribeiro participam ativamente da produção literária e registros das cortes medievais.</p>
-            </div>
-            <!-- Quadrinho 6 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XVI (1548)</div>
-                <div class="timeline-title">Bernardo Ribeiro e o Renascimento</div>
-                <p class="timeline-desc">O escritor Bernardo Ribeiro publica <em>Menina e Moça</em>, marco fundamental da prosa sentimental e pastoril peninsular.</p>
-            </div>
-            <!-- Quadrinho 7 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XVII (1640)</div>
-                <div class="timeline-title">Guerra da Restauração da Independência</div>
-                <p class="timeline-desc">Capitães e soldados Ribeiro participam da defesa das fronteiras nacionais contra o domínio da Coroa Espanhola.</p>
-            </div>
-            <!-- Quadrinho 8 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XVIII (1750)</div>
-                <div class="timeline-title">Expansão Administrativa no Brasil Colonial</div>
-                <p class="timeline-desc">Comerciantes e autoridades administrativas Ribeiro deslocam-se para o ultramar, fixando-se em São Paulo, Rio de Janeiro e Minas.</p>
-            </div>
-            <!-- Quadrinho 9 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XIX (1822)</div>
-                <div class="timeline-title">Atuação no Brasil Império</div>
-                <p class="timeline-desc">Políticos, magistrados e intelectuais com o sobrenome ocupam posições de destaque na consolidação do Estado nacional brasileiro.</p>
-            </div>
-            <!-- Quadrinho 10 -->
-            <div class="timeline-item">
-                <div class="timeline-year">Século XX e XXI</div>
-                <div class="timeline-title">Relevância na Lusofonia Moderna</div>
-                <p class="timeline-desc">Ribeiro firma-se como um sobrenome de grande prestígio internacional, com forte projeção nas ciências, letras, artes e culinária.</p>
+            <div class="timeline">
+                <!-- Quadrinho 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século IX</div>
+                    <div class="timeline-title">Toponímia nas Montanhas do Minho e Galiza</div>
+                    <p class="timeline-desc">Comunidades rurais utilizam acidentes geográficos fluviais, como pequenos regatos, para identificar moradias e clãs locais.</p>
+                </div>
+                <!-- Quadrinho 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XI (1050)</div>
+                    <div class="timeline-title">Primeiros Registros Documentais</div>
+                    <p class="timeline-desc">O termo começa a constar formalmente como apelido de família em escrituras eclesiásticas no norte ibérico.</p>
+                </div>
+                <!-- Quadrinho 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XII (1128)</div>
+                    <div class="timeline-title">Autonomia do Condado Portucalense</div>
+                    <p class="timeline-desc">Membros da linhagem Ribeiro combatem na Batalha de São Mamede, integrando redes de poder e vassalagem ao novo reino.</p>
+                </div>
+                <!-- Quadrinho 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XIII (1270)</div>
+                    <div class="timeline-title">Fundação de Solares na Região Norte</div>
+                    <p class="timeline-desc">Estabelecimento oficial do solar principal da família na região de Entre Douro e Minho, ramificando-se por Portugal.</p>
+                </div>
+                <!-- Quadrinho 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XIV (1360)</div>
+                    <div class="timeline-title">Presença na Poesia Trovadoresca</div>
+                    <p class="timeline-desc">Trovadores e clérigos da família Ribeiro participam ativamente da produção literária e registros das cortes medievais.</p>
+                </div>
+                <!-- Quadrinho 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XVI (1548)</div>
+                    <div class="timeline-title">Bernardo Ribeiro e o Renascimento</div>
+                    <p class="timeline-desc">O escritor Bernardo Ribeiro publica <em>Menina e Moça</em>, marco fundamental da prosa sentimental e pastoril peninsular.</p>
+                </div>
+                <!-- Quadrinho 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XVII (1640)</div>
+                    <div class="timeline-title">Guerra da Restauração da Independência</div>
+                    <p class="timeline-desc">Capitães e soldados Ribeiro participam da defesa das fronteiras nacionais contra o domínio da Coroa Espanhola.</p>
+                </div>
+                <!-- Quadrinho 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XVIII (1750)</div>
+                    <div class="timeline-title">Expansão Administrativa no Brasil Colonial</div>
+                    <p class="timeline-desc">Comerciantes e autoridades administrativas Ribeiro deslocam-se para o ultramar, fixando-se em São Paulo, Rio de Janeiro e Minas.</p>
+                </div>
+                <!-- Quadrinho 9 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XIX (1822)</div>
+                    <div class="timeline-title">Atuação no Brasil Império</div>
+                    <p class="timeline-desc">Políticos, magistrados e intelectuais com o sobrenome ocupam posições de destaque na consolidação do Estado nacional brasileiro.</p>
+                </div>
+                <!-- Quadrinho 10 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">Século XX e XXI</div>
+                    <div class="timeline-title">Relevância na Lusofonia Moderna</div>
+                    <p class="timeline-desc">Ribeiro firma-se como um sobrenome de grande prestígio internacional, com forte projeção nas ciências, letras, artes e culinária.</p>
+                </div>
             </div>
         </div>
     </div>
