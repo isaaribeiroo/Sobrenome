@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linha do Tempo dos Sobrenomes: Silva e Ribeiro</title>
-    <!-- Importando fontes delicadas do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fontes modernas e sofisticadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-silva: #e3b7b8;
-            --accent-silva: #d48f92;
-            --primary-ribeiro: #b5c9bb;
-            --accent-ribeiro: #839e8c;
-            --bg-color: #fcfbfa;
+            --primary-silva: #e6b8c2;
+            --accent-silva: #d495a3;
+            --primary-ribeiro: #c7b8e6;
+            --accent-ribeiro: #a694d4;
+            --bg-color: #fcf6f5;
             --card-bg: #ffffff;
-            --text-color: #6b635b;
-            --heading-font: 'Playfair Display', serif;
-            --body-font: 'Quicksand', sans-serif;
+            --text-color: #5c5254;
+            --heading-font: 'Cormorant Garamond', serif;
+            --body-font: 'Montserrat', sans-serif;
         }
 
         body {
@@ -24,56 +24,61 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.7;
+            padding: 50px 20px;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            background: linear-gradient(135deg, #f7f3ee, #ede7df);
-            color: #5c534c;
-            padding: 45px 30px;
-            border-radius: 24px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid #f2ece4;
+            background: linear-gradient(135deg, #faedf0, #f0ebfa);
+            color: #4a4043;
+            padding: 50px 30px;
+            border-radius: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(230, 184, 194, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
         header h1 {
             font-family: var(--heading-font);
             margin: 0 0 12px 0;
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 600;
-            color: #4a423b;
+            letter-spacing: 0.5px;
         }
 
         header p {
             margin: 0;
-            color: #8a7f76;
-            font-size: 15px;
-            font-style: italic;
+            color: #8c7f82;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .surname-section {
             background: var(--card-bg);
-            border-radius: 24px;
-            padding: 35px;
-            margin-bottom: 45px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid #f4efe9;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 40px rgba(180, 170, 185, 0.08);
+            border: 1px solid #f7f0f2;
+            position: relative;
+            overflow: hidden;
         }
 
         .surname-section.silva {
-            border-top: 8px solid var(--primary-silva);
+            border-top: 6px solid var(--primary-silva);
         }
 
         .surname-section.ribeiro {
-            border-top: 8px solid var(--primary-ribeiro);
+            border-top: 6px solid var(--primary-ribeiro);
         }
 
         .surname-header {
@@ -81,109 +86,122 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
-            border-bottom: 1px solid #f4efe9;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            gap: 20px;
+            border-bottom: 1px solid #f5eff1;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .surname-title {
             font-family: var(--heading-font);
-            font-size: 26px;
+            font-size: 30px;
             font-weight: 600;
             margin: 0;
-            letter-spacing: 0.5px;
         }
 
-        .silva .surname-title { color: #b87b7e; }
-        .ribeiro .surname-title { color: #627e6c; }
+        .silva .surname-title { color: #b87a88; }
+        .ribeiro .surname-title { color: #8472b5; }
 
         .coat-of-arms {
-            background: #faf8f5;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 13px;
-            color: #7d756d;
-            border: 1px dashed #e6dfd5;
+            background: #faf4f6;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #8a7a7e;
+            border: 1px solid #f0e1e4;
         }
 
         .meaning {
             font-style: italic;
-            color: #736b63;
-            background: #faf8f5;
-            padding: 18px 22px;
-            border-left: 4px solid #e3dbcd;
-            margin-bottom: 35px;
-            border-radius: 0 12px 12px 0;
+            color: #73676a;
+            background: #fcf8f9;
+            padding: 20px 25px;
+            border-left: 3px solid #e6b8c2;
+            margin-bottom: 40px;
+            border-radius: 0 16px 16px 0;
+            font-size: 14.5px;
         }
 
-        /* Linha do Tempo */
+        .ribeiro .meaning {
+            border-left-color: #c7b8e6;
+        }
+
+        /* Linha do Tempo Estilizada */
         .timeline {
             position: relative;
-            padding-left: 30px;
-            border-left: 2px dashed #e3dbcd;
+            padding-left: 35px;
+            border-left: 2px dashed #f0e1e4;
             margin-left: 10px;
+        }
+
+        .ribeiro .timeline {
+            border-left-color: #e2dcf0;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
             background: #ffffff;
-            border: 1px solid #f2ece4;
-            border-radius: 16px;
-            padding: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #f7f2f4;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: all 0.3s ease;
         }
 
         .timeline-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(230, 184, 194, 0.12);
+            border-color: #ecd5db;
+        }
+
+        .ribeiro .timeline-item:hover {
+            box-shadow: 0 10px 25px rgba(199, 184, 230, 0.12);
+            border-color: #d8cceb;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -37px;
-            top: 24px;
+            left: -43px;
+            top: 26px;
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 0 2px #e3dbcd;
-        }
-
-        .silva .timeline-item::before {
-            background-color: var(--accent-silva);
+            background: #ffffff;
+            border: 3px solid #d495a3;
+            box-shadow: 0 0 0 4px #faf4f6;
         }
 
         .ribeiro .timeline-item::before {
-            background-color: var(--accent-ribeiro);
+            border-color: #a694d4;
+            box-shadow: 0 0 0 4px #f4f2f9;
         }
 
         .timeline-year {
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
 
-        .silva .timeline-year { color: #d48f92; }
-        .ribeiro .timeline-year { color: #839e8c; }
+        .silva .timeline-year { color: #d495a3; }
+        .ribeiro .timeline-year { color: #9a88cc; }
 
         .timeline-title {
             font-family: var(--heading-font);
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            color: #524a43;
+            color: #4a4043;
             margin-bottom: 8px;
         }
 
         .timeline-desc {
-            font-size: 14px;
-            color: #7d756d;
+            font-size: 13.5px;
+            color: #7a6f72;
             margin: 0;
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -193,13 +211,13 @@
 
     <header>
         <h1>Memória & Raízes</h1>
-        <p>Um olhar delicado sobre a história e a trajetória das famílias Silva e Ribeiro</p>
+        <p>Um olhar contemporâneo e delicado pela história da família</p>
     </header>
 
     <!-- ================= SOBRENOME SILVA ================= -->
     <div class="surname-section silva">
         <div class="surname-header">
-            <h2 class="surname-title">🌿 Família Silva</h2>
+            <h2 class="surname-title">🌸 Família Silva</h2>
             <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Campo de prata, com um leão rampante de púrpura.</div>
         </div>
         <div class="meaning">
@@ -273,7 +291,7 @@
     <!-- ================= SOBRENOME RIBEIRO ================= -->
     <div class="surname-section ribeiro">
         <div class="surname-header">
-            <h2 class="surname-title">💧 Família Ribeiro</h2>
+            <h2 class="surname-title">🌷 Família Ribeiro</h2>
             <div class="coat-of-arms"><strong>Brasão Simbólico:</strong> Escudo xadrez de prata e azul, com bordadura de goles.</div>
         </div>
         <div class="meaning">
