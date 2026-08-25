@@ -80,7 +80,7 @@
             border-top: 6px solid var(--primary-ribeiro);
         }
 
-        /* Banner de Imagem Temática Garantido */
+        /* Banner de Imagem Temática */
         .surname-banner-container {
             width: 100%;
             height: 200px;
@@ -221,6 +221,86 @@
             color: #7a6f72;
             margin: 0;
             line-height: 1.7;
+        }
+
+        /* Seção Final de Brasões */
+        .arms-gallery {
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(180, 170, 185, 0.08);
+            border: 1px solid #f7f0f2;
+            text-align: center;
+        }
+
+        .arms-gallery h2 {
+            font-family: var(--heading-font);
+            font-size: 30px;
+            color: #4a4043;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .arms-gallery > p {
+            color: #8c7f82;
+            font-size: 14px;
+            margin-bottom: 35px;
+        }
+
+        .arms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .arm-card {
+            background: #faf4f6;
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid #f0e1e4;
+            transition: transform 0.3s ease;
+        }
+
+        .arm-card.ribeiro-card {
+            background: #f7f4fa;
+            border-color: #e2dcf0;
+        }
+
+        .arm-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .arm-image-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .arm-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .arm-card h3 {
+            font-family: var(--heading-font);
+            font-size: 22px;
+            margin: 0 0 10px 0;
+            color: #4a4043;
+        }
+
+        .arm-card p {
+            font-size: 13px;
+            color: #73676a;
+            margin: 0;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -369,6 +449,32 @@
                     <div class="timeline-title">Relevância na Lusofonia Moderna</div>
                     <p class="timeline-desc">Ribeiro firma-se como um sobrenome de grande prestígio internacional, com forte projeção nas ciências, letras, artes e culinária.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= GALERIA DE BRASÕES NO FINAL ================= -->
+    <div class="arms-gallery">
+        <h2>Heráldica & Símbolos</h2>
+        <p>A representação visual clássica das linhagens</p>
+        
+        <div class="arms-grid">
+            <!-- Brasão Silva -->
+            <div class="arm-card">
+                <div class="arm-image-container">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Heráldica Silva" class="arm-image">
+                </div>
+                <h3>Família Silva</h3>
+                <p>Campo de prata com leão rampante de púrpura, simbolizando nobreza, coragem e a força histórica da linhagem.</p>
+            </div>
+
+            <!-- Brasão Ribeiro -->
+            <div class="arm-card ribeiro-card">
+                <div class="arm-image-container">
+                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Heráldica Ribeiro" class="arm-image">
+                </div>
+                <h3>Família Ribeiro</h3>
+                <p>Escudo xadrez de prata e azul com bordadura de goles, representando tradição, lealdade e as origens junto às águas.</p>
             </div>
         </div>
     </div>
