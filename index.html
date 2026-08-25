@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origens Fofas: Silva & Ribeiro</title>
+  <title>Linha do Tempo: Silva & Ribeiro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 100%);
@@ -17,7 +17,7 @@
       --rose-gold: #b76e79;
       --text-main: #5c4b51;
       --text-soft: #8c7b83;
-      --shadow-color: rgba(216, 112, 147, 0.08);
+      --shadow-color: rgba(216, 112, 147, 0.12);
     }
 
     * {
@@ -38,19 +38,11 @@
     header {
       text-align: center;
       padding: 4rem 1.5rem 2.5rem 1.5rem;
-      position: relative;
-    }
-
-    header::after {
-      content: "🌸";
-      font-size: 1.8rem;
-      display: block;
-      margin-top: 0.8rem;
     }
 
     header h1 {
       font-family: 'Comfortaa', cursive;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: var(--primary-pink);
       font-weight: 700;
       margin-bottom: 0.5rem;
@@ -64,274 +56,236 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    .intro-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
-      border: 2px solid #fce7f3;
-      border-radius: 24px;
-      padding: 2rem 2.5rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 10px 25px var(--shadow-color);
-      text-align: center;
-    }
-
-    .intro-card h2 {
-      font-family: 'Comfortaa', cursive;
-      color: var(--rose-gold);
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .cards-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 28px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 12px 30px var(--shadow-color);
-      border: 2px solid #fdf2f8;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Estilo da Linha do Tempo */
+    .timeline {
       position: relative;
-      overflow: hidden;
+      margin: 2rem 0;
+      padding: 1rem 0;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 35px rgba(216, 112, 147, 0.15);
-    }
-
-    .card::before {
-      content: "";
+    /* Linha central vertical */
+    .timeline::before {
+      content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(90deg, #fbcfe8, #d8b4fe);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #fbcfe8 0%, #d8b4fe 100%);
+      border-radius: 2px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #fdf2f8;
-      color: var(--primary-pink);
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-      border: 1px solid #fbcfe8;
-    }
-
-    .card h2 {
-      font-family: 'Comfortaa', cursive;
-      font-size: 1.8rem;
-      color: var(--rose-gold);
-      margin-bottom: 1.2rem;
-    }
-
-    .card h3 {
-      font-size: 1.15rem;
-      color: var(--primary-pink);
-      margin: 1.5rem 0 0.5rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .card p {
-      font-size: 1rem;
-      color: var(--text-main);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0.8rem 0;
-    }
-
-    li {
+    .timeline-item {
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.8rem;
-      font-size: 0.98rem;
+      width: 50%;
+      padding: 0 2.5rem;
+      margin-bottom: 2.5rem;
     }
 
-    li::before {
-      content: "✨";
-      position: absolute;
+    .timeline-item:nth-child(odd) {
       left: 0;
-      top: -2px;
-      font-size: 0.85rem;
+      text-align: right;
     }
 
-    .highlight-box {
-      background: #faf5ff;
-      border: 1.5px dashed var(--pastel-lavender);
-      border-radius: 16px;
-      padding: 1.2rem;
-      margin-top: 1.5rem;
-      font-size: 0.92rem;
-      color: #6b21a8;
-    }
-
-    .comparison-wrapper {
-      margin-top: 3rem;
-      background: var(--card-bg);
-      border-radius: 28px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 12px 30px var(--shadow-color);
-      border: 2px solid #fdf2f8;
-    }
-
-    .comparison-wrapper h2 {
-      font-family: 'Comfortaa', cursive;
-      text-align: center;
-      color: var(--rose-gold);
-      margin-bottom: 1.8rem;
-      font-size: 1.6rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 16px;
-    }
-
-    th, td {
-      padding: 1rem;
+    .timeline-item:nth-child(even) {
+      left: 50%;
       text-align: left;
     }
 
-    th {
-      background-color: #fce7f3;
+    /* Marcador na linha */
+    .timeline-dot {
+      position: absolute;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background-color: var(--card-bg);
+      border: 4px solid var(--primary-pink);
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(216, 112, 147, 0.3);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -10px;
+    }
+
+    /* Cartão da Linha do Tempo */
+    .timeline-content {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 25px var(--shadow-color);
+      border: 2px solid #fdf2f8;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-4px);
+    }
+
+    .badge-era {
+      display: inline-block;
+      background: #fdf2f8;
       color: var(--primary-pink);
       font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 15px;
+      margin-bottom: 0.6rem;
+      border: 1px solid #fbcfe8;
       font-family: 'Comfortaa', cursive;
     }
 
-    td {
-      background-color: #fffafc;
-      border-bottom: 1px solid #fce7f3;
-      font-size: 0.95rem;
+    .timeline-content h2 {
+      font-family: 'Comfortaa', cursive;
+      font-size: 1.3rem;
+      color: var(--rose-gold);
+      margin-bottom: 0.8rem;
     }
 
-    tr:last-child td {
-      border-bottom: none;
+    .timeline-content p {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    .surname-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      margin-top: 0.3rem;
+    }
+
+    .tag-silva {
+      background-color: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .tag-ribeiro {
+      background-color: #f0f9ff;
+      color: #075985;
+      border: 1px solid #bae6fd;
     }
 
     footer {
       text-align: center;
-      margin-top: 4rem;
+      margin-top: 3rem;
       color: var(--text-soft);
       font-size: 0.9rem;
     }
 
+    /* Responsividade para telas menores */
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .cards-wrapper { grid-template-columns: 1fr; }
-      .card { padding: 1.8rem; }
-      table { display: block; overflow-x: auto; }
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 0;
+        text-align: left !important;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+
+      .timeline-dot {
+        left: 10px !important;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>A História das Nossas Famílias</h1>
-    <p>Um olhar delicado sobre a origem encantadora dos sobrenomes Silva e Ribeiro</p>
+    <h1>Linha do Tempo das Famílias 🌸</h1>
+    <p>A encantadora trajetória dos sobrenomes Silva e Ribeiro ao longo dos séculos</p>
   </header>
 
   <main class="container">
+    <div class="timeline">
 
-    <div class="intro-box intro-card">
-      <h2>🍃 Conexão com a Natureza</h2>
-      <p>Você sabia que ambos os sobrenomes nasceram do carinho das pessoas pela natureza? Na Idade Média, as famílias eram presenteadas com nomes que lembravam os lugares bonitos onde moravam, como florestas verdinhas e riachos tranquilos.</p>
-    </div>
-
-    <div class="cards-wrapper">
-
-      <!-- CARD SILVA -->
-      <article class="card">
-        <span class="badge">Origem: Latim</span>
-        <h2>Silva 🌿</h2>
-
-        <h3>O Significado</h3>
-        <p>Vem da palavra em latim <em>silva</em>, que quer dizer <strong>"floresta"</strong>, <strong>"mata verde"</strong> ou <strong>"bosque"</strong>. Era o nome dado com afeto a quem vivia pertinho da natureza bucólica em Portugal.</p>
-
-        <h3>Sua Trajetória</h3>
-        <p>Com o tempo, o nome atravessou o oceano e se espalhou pelo Brasil com muito amor:</p>
-        <ul>
-          <li><strong>Múltiplos Recomeços:</strong> Adotado por famílias portuguesas, povos indígenas e pessoas que buscavam um novo início cheio de esperança.</li>
-          <li><strong>Aconchego e União:</strong> Tornou-se o sobrenome mais querido e presente em nosso país, abraçando milhões de histórias.</li>
-        </ul>
-
-        <div class="highlight-box">
-          🌷 <strong>Curiosidade Doce:</strong> Por remeter às árvores e à vida, era um dos nomes favoritos escolhidos para simbolizar o florescer de uma nova jornada familiar.
+      <!-- ITEM 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="badge-era">Idade Média (Séc. XI - XII)</span>
+          <h2>Origens na Península Ibérica</h2>
+          <p>Nascem os apelidos carinhosos ligados à natureza em Portugal. As famílias que moravam perto de belas florestas ganhavam o nome <strong>Silva</strong>, enquanto as que viviam à beira de riachos límpidos recebiam o nome <strong>Ribeiro</strong>.</p>
+          <span class="surname-tag tag-silva">🌿 Silva</span>
+          <span class="surname-tag tag-ribeiro">🌊 Ribeiro</span>
         </div>
-      </article>
+      </div>
 
-      <!-- CARD RIBEIRO -->
-      <article class="card">
-        <span class="badge">Origem: Latim</span>
-        <h2>Ribeiro 🌊</h2>
-
-        <h3>O Significado</h3>
-        <p>Deriva de <em>riparia</em>, que significa <strong>"pequeno curso d'água"</strong>, <strong>"riacho"</strong> ou <strong>"córrego transparente"</strong>. Identificava as famílias que moravam perto da mansidão dos rios.</p>
-
-        <h3>Sua Trajetória</h3>
-        <p>Esse nome suave acompanhou viagens inesquecíveis pelo interior das nossas terras:</p>
-        <ul>
-          <li><strong>Caminhos e Horizontes:</strong> Esteve presente com os viajantes e pequenos produtores que desbravaram belos vales e montanhas.</li>
-          <li><strong>Presença Marcante:</strong> Trouxe vida para vilas e cidadezinhas que nasceram à beira de rios e riachos por todo o Brasil.</li>
-        </ul>
-
-        <div class="highlight-box">
-          🎀 <strong>Curiosidade Doce:</strong> Na Espanha, esse mesmo nome ganhou formas igualmente charmosas, como <em>Rivera</em> e <em>Rivero</em>.
+      <!-- ITEM 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="badge-era">Século XVI (Ano 1500 em diante)</span>
+          <h2>A Chegada ao Brasil</h2>
+          <p>Com o início da navegação e colonização, as primeiras famílias e exploradores portugueses desembarcam nas praias brasileiras, trazendo esses dois nomes cheios de histórias e memórias afetuosas em suas bagagens.</p>
+          <span class="surname-tag tag-silva">🌿 Silva</span>
+          <span class="surname-tag tag-ribeiro">🌊 Ribeiro</span>
         </div>
-      </article>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="badge-era">Séculos XVII - XVIII</span>
+          <h2>Expansão e Novos Começos</h2>
+          <p>Enquanto os <strong>Ribeiros</strong> acompanhavam os caminhos dos rios e do tropeirismo rumo ao interior, os <strong>Silvas</strong> tornavam-se a escolha acolhedora para o batismo de novos povos, simbolizando a união e o florescer de novas vidas.</p>
+          <span class="surname-tag tag-silva">🌿 Silva</span>
+          <span class="surname-tag tag-ribeiro">🌊 Ribeiro</span>
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="badge-era">Século XIX</span>
+          <h2>Aconchego no Sul do Brasil</h2>
+          <p>Com o desenvolvimento das rotas do gado e o surgimento das fazendas, ambos os sobrenomes criam raízes profundas em vilas tradicionais e nos campos verdejantes do Paraná e de toda a Região Sul.</p>
+          <span class="surname-tag tag-silva">🌿 Silva</span>
+          <span class="surname-tag tag-ribeiro">🌊 Ribeiro</span>
+        </div>
+      </div>
+
+      <!-- ITEM 5 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="badge-era">Presente</span>
+          <h2>Um Abraço em Nossa História</h2>
+          <p>Hoje, Silva e Ribeiro são parte do coração do Brasil. Representam laços de carinho, respeito às raízes e a doçura de histórias familiares que atravessaram gerações para chegar até você.</p>
+          <span class="surname-tag tag-silva">✨ Legado</span>
+        </div>
+      </div>
 
     </div>
-
-    <!-- TABELA COMPARATIVA -->
-    <section class="comparison-wrapper">
-      <h2>Resumo Delicado ✨</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Sobrenome</th>
-            <th>Inspiração Natural</th>
-            <th>Sensação e Significado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Silva</strong></td>
-            <td>Mata & Bosque</td>
-            <td>Aconchego, vida, frescor das árvores</td>
-          </tr>
-          <tr>
-            <td><strong>Ribeiro</strong></td>
-            <td>Riacho & Córrego</td>
-            <td>Fluidez, paz, serenidade das águas</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
   </main>
 
   <footer>
-    <p>Feito com 💖 para preservar nossas memórias e raízes</p>
+    <p>Feito com 💖 para celebrar o tempo e as nossas origens</p>
   </footer>
 
 </body>
